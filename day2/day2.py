@@ -34,4 +34,7 @@ def two():
             aim += data[idx*2+1]
     print(depth*horizontal)
 
+
+    print()
+
 two()
