@@ -23,4 +23,4 @@ def two():
 
     print(counter)
 
-two()
+one()
