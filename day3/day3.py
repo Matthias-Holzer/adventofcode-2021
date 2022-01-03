@@ -1,4 +1,4 @@
-file = open('input', 'r')
+file = open('message.txt', 'r')
 read = file.read().splitlines()
 
 def one():
@@ -21,7 +21,7 @@ def two_oxygen_generator_rating():
     kill = ''
     for idx in range(12):
         if(len(data)==1):
-            return int(data[0], 2)
+            break
         cal = 0
         for line in data:
             cal += int(line[idx])
@@ -34,7 +34,8 @@ def two_oxygen_generator_rating():
             if line[idx] != kill:
                 data2.append(line)
         data = data2
-        #print(data)
+        print(data)
+    print(int(data[0], 2))
     return int(data[0], 2)
 
 def two_co2_scrubber_rating():
@@ -42,23 +43,22 @@ def two_co2_scrubber_rating():
     kill = ''
     for idx in range(12):
         if (len(data) == 1):
-            return int(data[0], 2)
+            break
         cal = 0
         for line in data:
             cal += int(line[idx])
-        if cal <= (len(data) / 2):
-            kill = '0'
-        else:
+        if cal >= (len(data) / 2):
             kill = '1'
+        else:
+            kill = '0'
         data2 = []
         for line in data:
             if line[idx] != kill:
                 data2.append(line)
         data = data2
-        #print(data)
+        print(data)
+    print(int(data[0], 2))
     return int(data[0], 2)
-#print(one())
 
-print(two_oxygen_generator_rating())
-print(two_co2_scrubber_rating())
+#print(one())
 print(two_oxygen_generator_rating() * two_co2_scrubber_rating())
