@@ -1,10 +1,9 @@
 #Day 6
 
 ## Idea
-As Python and C are close buddys but day and night in performance i wanted to test the difference in this example
+I wanted to use a custom self writen c function in y python script, C is just sooo much faster
 
-
-## compile c
+## compile c (doesn't work, because no main())
 ```
 gcc -o faster faster.c
 ```

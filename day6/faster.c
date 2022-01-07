@@ -1,15 +1,8 @@
 #include <stdio.h>
 
-void printArray(int arr[]){
-    for (int i = 0; i < 9; i++){
-        printf("There are %d fish of %d \n", arr[i], i);
-    }
-    printf("\n");
-}
-
 int faster(int* input, int size, int days){
     //getting the amount of fish per state
-    long arr[9] = {0,0,0,0,0,0,0,0,0};
+    long long arr[9] = {0,0,0,0,0,0,0,0,0};
     for( int i = 0; i < size; i++){
         //if( i % 2 == 0 || i == 0)
             switch(input[i]){
@@ -25,9 +18,8 @@ int faster(int* input, int size, int days){
             }
         //}
     }
-
     for( int i = 0; i < days; i++){
-        long tmp = arr[0];
+        long long tmp = arr[0];
         arr[0] = arr[1];
         arr[1] = arr[2];
         arr[2] = arr[3];
@@ -38,10 +30,10 @@ int faster(int* input, int size, int days){
         arr[7] = arr[8];
         arr[8] = tmp;
     }
-    long fish = 0;
+    long long fish = 0;
     for(int i = 0; i < 9; i++){
         fish += arr[i];
     }
-    printf("There are so many fish in the see: %d \n",fish);
-    return 0;
+    printf("After %d days, there are %lld fish in the see \n",days,fish);
+    return fish;
 }
