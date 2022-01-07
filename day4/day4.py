@@ -7,14 +7,7 @@ last_draw = None
 part_two = False
 bords_that_won = []
 
-def writeToCSV(rows):
-    fieldnames = ['table_id', 'idx', 'idy', 'value', 'ticked']
-
-    with open('test.csv', 'w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(fieldnames)
-        for row in rows:
-            writer.writerow(row)
+output = []
 
 rows = [
         [0,0,0,45,0],
@@ -24,9 +17,21 @@ rows = [
         [4,0,4,45,0]
     ]
 
+def writeToCSV():
+    fieldnames = ['draw','board_number', 'idy', 'idx', 'value', 'ticked']
+    with open('data.csv', 'w', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(fieldnames)
+        print(output)
+        for line in output:
+            writer.writerow(line)
+
+
+
 def one():
     global tables_hit
     global last_draw
+    global output
     for idx_draw,draw in enumerate(draws):
         last_draw = draw
         for idx_table,table in enumerate(tables):
@@ -34,7 +39,11 @@ def one():
                 for idx_item,item in enumerate(row):
                     if item == draw:
                         tables_hit[idx_table][idx_row][idx_item] = 1
+                        output.append([draw, idx_table,idx_row, idx_item, item,  tables_hit[idx_table][idx_row][idx_item]])
+                    output.append([draw, idx_table, idx_row, idx_item, item, tables_hit[idx_table][idx_row][idx_item]])
         check_for_bingo()
+    writeToCSV()
+
 
 def two():
     global part_two
@@ -78,7 +87,7 @@ def calculate_winning_board(winning_board_number):
     print(f"The Winning Board is {winning_board_number}")
     print(f"The last Draw was {last_draw}")
     print(f"The sum is {sum} and the index is {winning_board_number}")
-    exit()
+
 
 def main():
     global draws
