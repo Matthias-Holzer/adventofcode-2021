@@ -1,0 +1,3 @@
+/Users/matthiasholzer/PycharmProjects/adventofcode-2021/day6/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/matthiasholzer/PycharmProjects/adventofcode-2021/day6/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/matthiasholzer/PycharmProjects/adventofcode-2021/day6/cmake-build-debug/CMakeFiles/day6.dir
