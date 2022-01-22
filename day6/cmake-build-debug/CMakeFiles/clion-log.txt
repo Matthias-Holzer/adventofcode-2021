@@ -1,4 +1,0 @@
-"/Users/matthiasholzer/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.5744.254/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/matthiasholzer/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/213.5744.254/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja /Users/matthiasholzer/PycharmProjects/adventofcode-2021/day6
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/matthiasholzer/PycharmProjects/adventofcode-2021/day6/cmake-build-debug
